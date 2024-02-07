@@ -1,0 +1,18 @@
+        static information:
+        <tr>
+            <td>Wireless headphones</td>
+            <td>20€</td>
+            <td>10</td>
+            <td><a href="http://www.google.com">buy</a></td>
+        </tr>        
+               
+        return data:
+        
+        {% for product in products %}
+            <tr>
+                <td> {{ product['product_name'] }} </td>
+                <td> {{ product['price'] }} </td>
+                <td> {{product['stock']}} </td>
+                <td><a href="{{ product['buy_now']}}">Buy</a></td>
+            </tr>
+        {% endfor %}

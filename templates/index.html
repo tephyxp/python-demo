@@ -1,0 +1,37 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+{% extends 'bootstrap/base.html' %}
+
+{% block content %}
+
+<header>
+    <div class="jumbotron text-center">
+        <h1>My Web App with Flask & Python</h1>
+    </div>
+</header>
+
+<div class="container" class="panel panel-default">
+    <table class="table table-condensed">
+        <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Buy Now</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td> {{ product['product_name'] }} </td>
+                <td> {{ product['price'] }} </td>
+                <td> {{product['stock']}} </td>
+                <td><a href="{{ product['buy_now']}}">Buy</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<br><br><br>
+
+{% endblock %}
+
